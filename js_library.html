@@ -1,0 +1,68 @@
+ <DOCTYPE html>
+ <html lang="en">
+  <head>
+    <title>JS Library</title>
+    <script>
+        var _ = {
+           map1: function(arr, callback) {
+             var arr2 =[]
+             for(var i = 0; i < arr.length; i++){
+               arr2.push(callback(arr[i]))
+             }
+             return arr2
+           },
+            find1 : function(arr,callback) {
+              var y = 0
+              for(var i = 0; i < arr.length; i++){
+                if(callback(arr[i]) === true){
+                  return arr[i]
+                }
+              }
+         
+            },
+            filter1 : function(arr,callback) {
+                var arr2 = []
+                for(var i = 0; i < arr.length; i++){
+                  if(callback(arr[i]) === true){
+                    arr2.push(arr[i])
+                  }
+                }
+                return arr2;     
+              },
+            reject1: function(arr,callback) {
+                var arr2 = []
+                for(var i = 0; i < arr.length; i++){
+                  if(callback(arr[i]) === false){
+                    arr2.push(arr[i])
+                  }
+                }
+                return arr2;     
+              },
+              reduce1: function(arr, callback){
+                var x = 0
+                for(var i = 0; i<arr.length; i++){
+                     x = callback(x,arr[i]);
+                }
+              return x
+              }
+           }
+  
+  
+      var mapp = _.map1([1, 2, 3, 4, 5, 6], function(num){ return num + 4; });
+      console.log(mapp)
+      var findd = _.find1([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+      console.log(findd)
+      var filterr = _.filter1([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; })
+      console.log(filterr)
+      var rejectt = _.reject1([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; })
+      console.log(rejectt)
+      var reducee = _.reduce1([1, 2, 3, 4, 5, 6], function(memo, num){ return memo + num; });
+      console.log(reducee)
+
+
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+		</script>
+		<style>
+			.blue{
+				background-color: blue;
+			}
+			.red{
+				background-color:red;
+			}
+			.green{
+				background-color: green;
+			}
+		</style>
+		<script>
+
+			$(document).ready(function(){
+			
+	   			$("button").click(function(){
+	        		$(this).toggleClass("red");
+	    		});
+			
+	   			$("button").hover(function(){
+	        		$(this).toggleClass("green");
+	    		});
+	    	});
+	    		$(document).on("keydown", "body", function(e){
+					if (e.keyCode == 13) {
+						 $("body").append('<button class = "blue" >Button Fun</button>');
+
+					}
+					$("button").click(function(){
+	        		$(this).toggleClass("red");
+	    		});
+			
+	   			$("button").hover(function(){
+	        		$(this).toggleClass("green");
+	    		});
+			});
+    	</script>
+	</head>
+  	<body>
+    	<button class = "blue" >Button Fun</button>
+  	</body>
+</html>

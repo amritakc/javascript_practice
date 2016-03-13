@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+		</script>
+		<style>
+			.blue{
+				background-color: blue;
+			}
+			.red{
+				background-color:red;
+			}
+		</style>
+		<script>
+
+			$(document).ready(function(){
+			
+	   	// 		$("button").click(function(){
+					// 	$.get("https://api.github.com/users/amritakc", function(data){
+					// 		$("p").append("My Username: " + data.login);
+					// 	});
+					// });
+	   	// 		});
+			$("button").click(function(){
+						$.get("https://api.github.com/users/amritakc", displayName)
+	
+			
+						function displayName(data) {
+			  				$("p").append("Username: " + data.login);
+						}
+					});
+	   			});
+
+   		
+   //  	});
+    	</script>
+	</head>
+  	<body>
+    	<button>Find me!</button>
+    	<p></p>
+  	</body>
+</html>
